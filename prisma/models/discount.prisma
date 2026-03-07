@@ -1,0 +1,21 @@
+model DiscountRule {
+    id        Int                   @id @default(autoincrement())
+    type      String                @default("PAIR")
+    pairSize  Int                   @default(2)
+    discount  Float // e.g. 0.05 = 5%, 0.10 = 10%
+    label     String
+    createdAt DateTime              @default(now())
+    updatedAt DateTime              @updatedAt
+    products  DiscountRuleProduct[]
+}
+
+model DiscountRuleProduct {
+    id             Int @id @default(autoincrement())
+    discountRuleId Int
+    productId      Int
+
+    discountRule DiscountRule @relation(fields: [discountRuleId], references: [id], onDelete: Cascade)
+    product      Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+    @@unique([discountRuleId, productId])
+}

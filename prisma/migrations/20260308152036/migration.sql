@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `LimitRule` ADD COLUMN `timeLimit` INTEGER NOT NULL DEFAULT 60;

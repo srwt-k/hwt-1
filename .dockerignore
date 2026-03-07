@@ -1,0 +1,6 @@
+node_modules
+.vscode
+.next
+.git
+.env
+prisma/generated

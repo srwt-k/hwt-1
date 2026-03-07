@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Red set",
+    "price": 50,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#ff0000"
+  },
+  {
+    "id": 2,
+    "name": "Green set",
+    "price": 40,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#00ff00"
+  },
+  {
+    "id": 3,
+    "name": "Blue set",
+    "price": 30,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#0000ff"
+  },
+  {
+    "id": 4,
+    "name": "Yellow set",
+    "price": 50,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#ffff00"
+  },
+  {
+    "id": 5,
+    "name": "Pink set",
+    "price": 80,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#ffc0cb"
+  },
+  {
+    "id": 6,
+    "name": "Purple set",
+    "price": 90,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#800080"
+  },
+  {
+    "id": 7,
+    "name": "Orange set",
+    "price": 120,
+    "currency": "THB",
+    "unit": "set",
+    "color": "#ffa500"
+  }
+]

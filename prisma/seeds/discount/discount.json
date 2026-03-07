@@ -1,0 +1,30 @@
+[
+  {
+    "type": "PAIR",
+    "pairSize": 2,
+    "discount": 0.05,
+    "label": "Orange pair (5% off)",
+    "productIds": [7]
+  },
+  {
+    "type": "PAIR",
+    "pairSize": 2,
+    "discount": 0.05,
+    "label": "Pink pair (5% off)",
+    "productIds": [5]
+  },
+  {
+    "type": "PAIR",
+    "pairSize": 2,
+    "discount": 0.05,
+    "label": "Green pair (5% off)",
+    "productIds": [2]
+  },
+  {
+    "type": "MEMBER",
+    "pairSize": 0,
+    "discount": 0.1,
+    "label": "Member card (10% off)",
+    "productIds": []
+  }
+]

@@ -1,0 +1,44 @@
+services:
+  mysql:
+    image: mysql:8
+    restart: always
+    command: ["mysqld", "--mysql-native-password=ON"]
+    environment:
+      MYSQL_ROOT_PASSWORD: myroot
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypass
+      MYSQL_DATABASE: foodstore
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "mysql://myuser:mypass@mysql:3306/foodstore"
+    depends_on:
+      mysql:
+        condition: service_healthy
+  
+  migrate-seed:
+    build: .
+    environment:
+      DATABASE_URL: "mysql://myuser:mypass@mysql:3306/foodstore"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command: sh -c "bunx prisma migrate deploy && bunx prisma db seed"
+    restart: "no" 
+    profiles: ["tools"]
+
+volumes:
+  mysql_data:

@@ -1,0 +1,9 @@
+model LimitRule {
+    id        Int    @id @default(autoincrement())
+    name      String
+    maxLimit  Int    @default(1)
+    timeLimit Int    @default(60) // minutes — e.g. max 1 per 60 mins
+    productId Int    @unique
+
+    product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
